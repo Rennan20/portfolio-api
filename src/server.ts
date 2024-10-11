@@ -8,7 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://portfolio-five-xi-38.vercel.app/",
+    origin: [
+      "https://portfolio-five-xi-38.vercel.app",
+      "http://localhost:3000",
+    ],
   })
 );
 
