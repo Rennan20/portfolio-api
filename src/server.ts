@@ -15,7 +15,7 @@ app.use(
 app.use("/projects", projectRoutes);
 app.use("/templates", templateRoutes);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use variável de ambiente para o port
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
