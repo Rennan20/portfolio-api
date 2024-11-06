@@ -6,7 +6,11 @@ const router = Router();
 const prisma = new PrismaClient();
 
 router.get("/", async (req: Request, res: Response) => {
-  const projects = await prisma.project.findMany();
+  const projects = await prisma.project.findMany({
+    orderBy: {
+      id: "asc",
+    },
+  });
   res.json(projects);
 });
 
